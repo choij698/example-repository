@@ -1,14 +1,18 @@
 const convert = (r,g,b) => {
   let c = 0, m = 0, y = 0, k = 0;
 
-  const white = Math.max(r / 255, g / 255, b / 255);
+  const red = r / 255;
+  const green = g / 255;
+  const blue = b / 255;
+
+  const white = Math.max(red, green, blue);
 
   if (white === 0) {
     k = 1;
   } else {
-    c = (white - r / 255) / white;
-    m = (white - g / 255) / white;
-    y = (white - b / 255) / white;
+    c = (white - red) / white;
+    m = (white - green) / white;
+    y = (white - blue) / white;
     k = 1 - white;
   }
   
